@@ -38,8 +38,8 @@
                             <input class="app-form-control" placeholder="MESSAGE">
                         </div>
                         <div class="app-form-group buttons">
-                            <button class="app-form-button">CANCEL</button>
-                            <button class="app-form-button">SEND</button>
+                            <button (click)="onCancel()">CANCEL</button>
+                            <button [disabled]="isUnchanged">SEND</button>
                         </div>
                     </div>
                 </div> <!-- .screen-body-item -->
