@@ -9,6 +9,7 @@ export class ServicesHomeComponent implements OnInit {
   firstName : string = "Danny";
   lastName : string = "Flash";
   phoneNumber : string = "212 666 4200";
+  jobTitle : string = "Vice President";
 
   constructor() { }
 
