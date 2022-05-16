@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-enter-pin',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./enter-pin.component.css']
 })
 export class EnterPinComponent implements OnInit {
+  @Input() numHit: number = null;
 
   constructor() { }
 

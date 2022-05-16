@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'atm';
+
+  @Output() numHit: EventEmitter<any> = new EventEmitter();
+  @Output() cancelHit: EventEmitter<any> = new EventEmitter();
+  @Output() enterHit: EventEmitter<any> = new EventEmitter();
+
+  numberKeyHit(n: number) {
+    this.numHit.emit(n);
+  }
 }

@@ -1,8 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'bootstrap/dist/css/bootstrap.css';
+@import url('http://fonts.cdnfonts.com/css/common-pixel');
 
 body {
     background-image: url('assets/heartOcean.gif');
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+h1, h2, h3, h4 {
+    color: white;
+    opacity: .7;
+    font-family: 'Common Pixel', sans-serif;
 }
