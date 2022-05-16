@@ -3,3 +3,10 @@
     width: 40%;
     height: 50%;
 }
+
+.screen {
+    background-image: url('../assets/static.gif');
+    background-size: cover;
+    width: 40%;
+    height: 50%;
+}
