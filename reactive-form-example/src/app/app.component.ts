@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -13,9 +13,7 @@ export class AppComponent implements OnInit {
   signupForm: FormGroup;
   forbiddenUsernames = ['john.doe', 'jane.doe'];
 
-  constructor(private formBuilder: FormBuilder){
-
-  }
+  constructor(private formBuilder: FormBuilder) {}
 
   //We use ngOnInit to initialize the data-bound properties of the form
   ngOnInit() {
@@ -27,14 +25,12 @@ export class AppComponent implements OnInit {
         'email': new FormControl(null, [Validators.required, Validators.email], this.forbiddenEmails)
       }),
       'honorific': new FormControl('Mrs.'),
-      'interests': new FormArray([]),
+      'interests': new FormArray([])
     });
-
 
     this.signupForm.statusChanges.subscribe(
       (value) => console.log(value)
     );
-
     this.signupForm.setValue({
       'userData': {
         'username': 'jane.smith',
@@ -43,13 +39,11 @@ export class AppComponent implements OnInit {
       'honorific': 'male',
       'interests': []
     });
-
     this.signupForm.patchValue({
       'userData': {
         'username': 'jane.doe',
       }
     });
-
   }
 
   //Display form info in console and reset the form
@@ -66,8 +60,8 @@ export class AppComponent implements OnInit {
 
   //Check if the value of the FormControl exists in the forbidden names and if so return object { 'nameIsForbidden': true }
   forbiddenNames(control: FormControl): {[s: string]: boolean} {
-    if( this.forbiddenUsernames.indexOf(control.value) !== -1 ){
-      return { 'nameIsForbidden': true };
+    if (this.forbiddenUsernames.indexOf(control.value) !== -1) {
+      return {'nameIsForbidden': true};
     }
     return null;
   }
@@ -84,5 +78,4 @@ export class AppComponent implements OnInit {
     });
     return promise;
   }
-
 }
